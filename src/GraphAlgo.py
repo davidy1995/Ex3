@@ -2,8 +2,9 @@ import json
 import sys
 from GraphAlgoInterface import GraphAlgoInterface
 from typing import List
-
+from src.Node import Node
 from src import GraphInterface
+from src.Edge import Edge
 
 
 class GraphAlgo(GraphAlgoInterface):
@@ -19,12 +20,11 @@ class GraphAlgo(GraphAlgoInterface):
                 src = data["src"]
                 weight = data["w"]
                 dst = data["dest"]
-                pos = data["pos"]
-                id = data["id"]
+
                 arrE = data["Edges"]
                 for line in arrE:
-                    # el = Edges(line["src"], line["w"], line["dest"],line["pos"],line[id])
-                    # edgesArr.append(el)
+                    el = Edge(line["src"], line["w"], line["dest"])
+                    edgesArr.append(el)
                     return True
 
         except IOError as error:
@@ -37,8 +37,9 @@ class GraphAlgo(GraphAlgoInterface):
             id = data["id"]
             arrN = data["Nodes"]
             for line in arrN:
-                # el = Nodes(line["pos"], line["id"])
-                # nodesArr.append(el)
+
+                el = Node(line["pos"], line["id"])
+                nodesArr.append(el)
                 return True
         except IOError as error:
             print('No file : %s' %(file_name))
