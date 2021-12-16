@@ -1,4 +1,4 @@
-from Loaction import Location
+from src.Location import Location
 
 
 class Node:
