@@ -1,11 +1,15 @@
 import json
 import sys
+import matplotlib.pyplot as plt
+import numpy as np
+
 from GraphAlgoInterface import GraphAlgoInterface
 from typing import List
 from src.Node import Node
 from src import GraphInterface
 from src.Edge import Edge
 from src.Location import Location
+import random
 
 
 
@@ -62,7 +66,22 @@ class GraphAlgo(GraphAlgoInterface):
         pass
 
     def plot_graph(self) -> None:
-        pass
+        self.load_from_json("A0.json")
+        plt.title('Our graph')
+        x_values= []
+        y_values = []
+        z_values = []
+        for i in range(1000):
+            x_values.append(random.randint(0,100))
+            y_values.append(random.randint(0,100))
+        plt.xlim(0,100)
+        plt.ylim(0, 100)
+        plt.scatter(x_values,y_values,color='green')
+    plt.show()
+
+
+
+
 
 
 
