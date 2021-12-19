@@ -13,7 +13,7 @@ xyB = (x_values[1],y_values[1])
 xyC = (x_values[2],y_values[2])
 size = len(x_values)
 plt.scatter(x_values, y_values, color='green') # green node dot
-
+# dsada
 
 # id's on nodes
 for i in range(size):
